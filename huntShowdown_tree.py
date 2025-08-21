@@ -52,12 +52,13 @@ data = [
 df = pd.DataFrame(data, columns=["weapon","type","ammo","silenced","price","damage","rpm","playstyle"])
 
 # Features og label
-X = df[["weapon","type","ammo","silenced","price","damage","rpm"]]
-y = df["playstyle"]
+X = df[["weapon","type","ammo","silenced","price","damage","rpm"]]  # X = input-variabler
+y = df["playstyle"]  # y = det vi skal forutsi
 
-cat_cols = ["weapon","type","ammo","silenced"]
-num_cols = ["price","damage","rpm"]
+cat_cols = ["weapon","type","ammo","silenced"]  # Kategoriske kolonner (tekst)
+num_cols = ["price","damage","rpm"]             # Numeriske kolonner (tall)
 
+# Lager en transformer som gjør om tekst til tall (one-hot)
 preprocess = ColumnTransformer(
     transformers=[
         ("cat", OneHotEncoder(handle_unknown="ignore"), cat_cols),
@@ -66,21 +67,21 @@ preprocess = ColumnTransformer(
 )
 
 # Enkelt tre – lav dybde for lesbarhet
-tree = DecisionTreeClassifier(max_depth=3, criterion="entropy", random_state=42)
-pipe = Pipeline([("prep", preprocess), ("tree", tree)])
+tree = DecisionTreeClassifier(max_depth=3, criterion="entropy", random_state=42)  # max_depth=3 gir enklere regler
+pipe = Pipeline([("prep", preprocess), ("tree", tree)])  # Pipeline: først transformer, så tre
 
-# Split
+# Splitter data i trening og test (33% test)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.33, stratify=y, random_state=42
 )
 
-# Tren
+# Tren modellen på treningsdata
 pipe.fit(X_train, y_train)
 from sklearn.metrics import accuracy_score
 
 # 1) Totalt riktig/feil på testsettet
-y_pred = pipe.predict(X_test)
-acc = accuracy_score(y_test, y_pred)
+y_pred = pipe.predict(X_test)  # Modellens prediksjoner på testsettet
+acc = accuracy_score(y_test, y_pred)  # Andel riktige
 tot = len(y_test)
 riktig = (y_pred == y_test).sum()
 feil = tot - riktig
@@ -88,17 +89,16 @@ feil = tot - riktig
 print(f"\n✅ Totalt riktig: {riktig}/{tot}  ({acc*100:.1f}%)")
 print(f"❌ Totalt feil  : {feil}/{tot}  ({(1-acc)*100:.1f}%)")
 
-
 # 2) List opp hvilke rader som ble feil – med våpennavn
 print("\nFeilklassifiserte eksempler:")
 for i, (yt, yp) in enumerate(zip(y_test, y_pred)):
     if yt != yp:
-        wpn = X_test.iloc[i]["weapon"]   # X_test er en DataFrame, har 'weapon'-kolonnen
+        wpn = X_test.iloc[i]["weapon"]   # Hent våpennavn fra testsettet
         print(f"- {wpn:20s}  fasit: {yt:5s}  →  modell: {yp:5s}")
 
 # 3) Per-klasse telling (hvor mange riktig per klasse)
 from collections import Counter
-support_per_class = Counter(y_test)
+support_per_class = Counter(y_test)  # Hvor mange av hver klasse i testsettet
 riktig_per_class = Counter()
 for yt, yp in zip(y_test, y_pred):
     if yt == yp:
@@ -118,9 +118,9 @@ for cls in pipe.classes_:
 # print("\nClassification report:\n", classification_report(y_test, pipe.predict(X_test)))
 
 # Regler i lesbar form (one-hot → klartekst)
-ohe = pipe.named_steps["prep"].named_transformers_["cat"]
-feat_names = list(ohe.get_feature_names_out(cat_cols)) + num_cols
-rules_raw = export_text(pipe.named_steps["tree"], feature_names=feat_names)
+ohe = pipe.named_steps["prep"].named_transformers_["cat"]  # Hent one-hot encoder
+feat_names = list(ohe.get_feature_names_out(cat_cols)) + num_cols  # Alle feature-navn
+rules_raw = export_text(pipe.named_steps["tree"], feature_names=feat_names)  # Tekstlig tre
 
 def pretty_rules(rules: str) -> str:
     lines = []
@@ -133,11 +133,11 @@ def pretty_rules(rules: str) -> str:
                 rest = line[idx+len(pref):]
                 val = rest.split(" ")[0]
                 if "<= 0.50" in line:
-                    line = line.replace(f"{pref}{val} <= 0.50", f"{col} != '{val}'")
+                    line = line.replace(f"{pref}{val} <= 0.50", f"{col} != '{val}'")  # Bytt ut med lesbar tekst
                 if ">  0.50" in line:
                     line = line.replace(f"{pref}{val} >  0.50", f"{col} == '{val}'")
         lines.append(line)
-    return "\n".join(lines).replace("|---", "├─").replace("|   ", "│  ")
+    return "\n".join(lines).replace("|---", "├─").replace("|   ", "│  ")  # Penere tre
 
 print("\nRegler (ryddet):\n")
 print(pretty_rules(rules_raw))
@@ -151,16 +151,16 @@ samples = pd.DataFrame([
     {"weapon":"Winfield HighRPM","type":"rifle","ammo":"small","silenced":"no","price":230,"damage":108,"rpm":160}, # unntak
     {"weapon":"Dolch Drilling",    "type":"shotgun","ammo":"shotgun","silenced":"no","price":380,"damage":190,"rpm":70}
 ])
-pred = pipe.predict(samples)
-proba = pipe.predict_proba(samples)
+pred = pipe.predict(samples)  # Modellens prediksjoner på samples
+proba = pipe.predict_proba(samples)  # Sannsynligheter for hver klasse
 
 print("\nPrediksjoner på samples:")
 for i, row in samples.iterrows():
-    probs = dict(zip(pipe.classes_, np.round(proba[i], 2)))
+    probs = dict(zip(pipe.classes_, np.round(proba[i], 2)))  # Lag dictionary med sannsynligheter
     print(f"- {row['weapon']:<18} → pred: {pred[i]:5s}  probs: {probs}")
 
 # Confusion matrix (for oversikt)
-cm = confusion_matrix(y_test, pipe.predict(X_test), labels=pipe.classes_)
+cm = confusion_matrix(y_test, pipe.predict(X_test), labels=pipe.classes_)  # Sammenlign fasit og prediksjon
 cm_df = pd.DataFrame(cm, index=[f"true_{c}" for c in pipe.classes_],
                         columns=[f"pred_{c}" for c in pipe.classes_])
-print("\nConfusion matrix:\n", cm_df)
+print("\nConfusion matrix:\n", cm_df)  # Viser hvor mange som ble riktig/feil per klasse
