@@ -28,6 +28,7 @@ data = [
 ["Specter 1882",      "shotgun","shotgun","no",     330,   200,    60,   "close"],
 ["Romero 77",         "shotgun","shotgun","no",     66,    200,    30,   "close"],
 ["Rival 78",          "shotgun","shotgun","no",     250,   190,    75,   "close"],
+["Romero Alamo",       "shotgun","shotgun","no",     500,   200,    100,    "close"],
 
 ["Winfield M1873",    "rifle",  "small",  "no",     201,   110,    120,  "mid"],
 ["Winfield Sil.",     "rifle",  "small",  "yes",    260,   105,    120,  "mid"],
@@ -75,11 +76,46 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # Tren
 pipe.fit(X_train, y_train)
+from sklearn.metrics import accuracy_score
+
+# 1) Totalt riktig/feil på testsettet
+y_pred = pipe.predict(X_test)
+acc = accuracy_score(y_test, y_pred)
+tot = len(y_test)
+riktig = (y_pred == y_test).sum()
+feil = tot - riktig
+
+print(f"\n✅ Totalt riktig: {riktig}/{tot}  ({acc*100:.1f}%)")
+print(f"❌ Totalt feil  : {feil}/{tot}  ({(1-acc)*100:.1f}%)")
+
+
+# 2) List opp hvilke rader som ble feil – med våpennavn
+print("\nFeilklassifiserte eksempler:")
+for i, (yt, yp) in enumerate(zip(y_test, y_pred)):
+    if yt != yp:
+        wpn = X_test.iloc[i]["weapon"]   # X_test er en DataFrame, har 'weapon'-kolonnen
+        print(f"- {wpn:20s}  fasit: {yt:5s}  →  modell: {yp:5s}")
+
+# 3) Per-klasse telling (hvor mange riktig per klasse)
+from collections import Counter
+support_per_class = Counter(y_test)
+riktig_per_class = Counter()
+for yt, yp in zip(y_test, y_pred):
+    if yt == yp:
+        riktig_per_class[yt] += 1
+
+print("\nRiktig per klasse:")
+for cls in pipe.classes_:
+    sup = support_per_class.get(cls, 0)
+    kor = riktig_per_class.get(cls, 0)
+    pct = (kor / sup) if sup else 0.0
+    print(f"- {cls:5s}: {kor}/{sup}  ({pct:.2%})")
 
 # Eval
-print("Accuracy (train):", round(pipe.score(X_train, y_train), 2))
-print("Accuracy (test) :", round(pipe.score(X_test, y_test), 2))
-print("\nClassification report:\n", classification_report(y_test, pipe.predict(X_test)))
+# Kommenterer bort disse for enklere oversikt over resultatente 
+# print("Accuracy (train):", round(pipe.score(X_train, y_train), 2))
+# print("Accuracy (test) :", round(pipe.score(X_test, y_test), 2))
+# print("\nClassification report:\n", classification_report(y_test, pipe.predict(X_test)))
 
 # Regler i lesbar form (one-hot → klartekst)
 ohe = pipe.named_steps["prep"].named_transformers_["cat"]
