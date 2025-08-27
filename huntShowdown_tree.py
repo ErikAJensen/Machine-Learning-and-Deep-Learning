@@ -47,6 +47,8 @@ data = [
 ["Nagant Silencer",   "pistol", "small",  "yes",     96,    91,    120,  "mid"],
 ["Caldwell Pax",      "pistol", "medium", "no",     100,   110,     90,  "mid"],
 ["Crown & King",      "shotgun","shotgun","no",     350,   200,     70,  "close"],
+
+
 ]
 
 df = pd.DataFrame(data, columns=["weapon","type","ammo","silenced","price","damage","rpm","playstyle"])
