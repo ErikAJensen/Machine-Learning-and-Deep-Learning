@@ -1,0 +1,221 @@
+ actual_label predicted_label
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Lavt stress
+Medium stress     Høyt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+Medium stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+Medium stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Lavt stress     Høyt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Høyt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Lavt stress
+Medium stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+Medium stress   Medium stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+Medium stress     Høyt stress
+  Høyt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Høyt stress
+  Lavt stress     Lavt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Lavt stress
