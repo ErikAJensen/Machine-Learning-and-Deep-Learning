@@ -1,0 +1,21 @@
+STRESS MODELL – RAPPORT
+Totalt testsett: 220
+Riktig: 196 (89.09%)
+Feil:  24 (10.91%)
+Per-klasse treffsikkerhet:
+  Lavt stress: 93.24% (n=74)
+  Medium stress: 88.89% (n=72)
+  Høyt stress: 85.14% (n=74)
+
+De 10 første (Fasit vs Modell):
+ actual_label predicted_label
+  Lavt stress     Lavt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Høyt stress
+  Lavt stress     Lavt stress
+  Høyt stress     Høyt stress
+  Lavt stress     Høyt stress
+Medium stress   Medium stress
+  Lavt stress     Lavt stress
