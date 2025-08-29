@@ -1,0 +1,247 @@
+
+Call:
+(function (x, y, trials = 1, rules = FALSE, weights = NULL, control
+ 2, fuzzyThreshold = FALSE, sample = 0, earlyStopping = TRUE, label
+ = "outcome", seed = 2707L))
+
+
+C5.0 [Release 2.07 GPL Edition]  	Fri Aug 29 12:28:20 2025
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 882 cases (21 attributes) from undefined.data
+
+7 attributes winnowed
+Estimated importance of remaining attributes:
+
+    379%  blood_pressure
+     16%  social_support
+      9%  academic_performance
+      7%  safety
+      5%  teacher_student_relationship
+      2%  headache
+      2%  breathing_problem
+      2%  extracurricular_activities
+     <1%  anxiety_level
+     <1%  sleep_quality
+     <1%  noise_level
+     <1%  basic_needs
+     <1%  future_career_concerns
+
+Rules:
+
+Rule 1: (259/5, lift 2.9)
+	headache <= -0.3457099
+	academic_performance > 0.1455607
+	social_support > -1.793429
+	->  class 0  [0.977]
+
+Rule 2: (7, lift 2.6)
+	sleep_quality > -1.090023
+	noise_level > 1.035262
+	safety > -1.940084
+	teacher_student_relationship <= -0.4677199
+	future_career_concerns > -1.06393
+	->  class 0  [0.889]
+
+Rule 3: (5, lift 2.5)
+	headache > -0.3457099
+	blood_pressure > -1.412638
+	safety > -0.5259072
+	safety <= 0.1811814
+	teacher_student_relationship <= -0.4677199
+	social_support > -1.793429
+	->  class 0  [0.857]
+
+Rule 4: (4, lift 2.5)
+	anxiety_level <= -0.3139181
+	blood_pressure > -1.412638
+	sleep_quality > -1.090023
+	sleep_quality <= -0.442179
+	future_career_concerns > -1.06393
+	->  class 0  [0.833]
+
+Rule 5: (3, lift 2.4)
+	headache > -0.3457099
+	headache <= 0.3601145
+	sleep_quality <= -1.737866
+	safety <= -0.5259072
+	->  class 0  [0.800]
+
+Rule 6: (3, lift 2.4)
+	headache <= -0.3457099
+	sleep_quality <= -1.090023
+	safety <= -1.940084
+	->  class 0  [0.800]
+
+Rule 7: (3, lift 2.4)
+	headache > 1.065939
+	safety > 0.1811814
+	future_career_concerns > -1.06393
+	social_support <= -1.793429
+	->  class 0  [0.800]
+
+Rule 8: (7/1, lift 2.3)
+	headache > -0.3457099
+	headache <= 1.065939
+	sleep_quality <= -1.090023
+	safety > -0.5259072
+	teacher_student_relationship <= -0.4677199
+	social_support > -1.793429
+	->  class 0  [0.778]
+
+Rule 9: (641/342, lift 1.4)
+	blood_pressure > -1.412638
+	->  class 0  [0.467]
+
+Rule 10: (241, lift 3.1)
+	blood_pressure <= -1.412638
+	->  class 1  [0.996]
+
+Rule 11: (121/1, lift 3.0)
+	sleep_quality > -0.442179
+	breathing_problem <= 0.9036297
+	noise_level > -1.249394
+	noise_level <= 1.035262
+	future_career_concerns > -1.06393
+	social_support > -1.793429
+	extracurricular_activities <= 0.1779048
+	->  class 1  [0.984]
+
+Rule 12: (114/4, lift 2.9)
+	anxiety_level > -0.3139181
+	sleep_quality > -1.090023
+	sleep_quality <= -0.442179
+	->  class 1  [0.957]
+
+Rule 13: (131/5, lift 2.9)
+	headache > -1.051534
+	headache <= -0.3457099
+	social_support > -1.793429
+	->  class 1  [0.955]
+
+Rule 14: (141/11, lift 2.8)
+	sleep_quality > -0.442179
+	sleep_quality <= 0.8535084
+	noise_level <= 1.035262
+	future_career_concerns > -1.06393
+	future_career_concerns <= 0.9102347
+	->  class 1  [0.916]
+
+Rule 15: (5, lift 2.6)
+	anxiety_level > -0.3139181
+	headache <= -0.3457099
+	sleep_quality <= -1.090023
+	safety > -1.940084
+	social_support <= -1.793429
+	->  class 1  [0.857]
+
+Rule 16: (47/25, lift 1.4)
+	teacher_student_relationship <= -0.4677199
+	social_support <= -1.793429
+	->  class 1  [0.469]
+
+Rule 17: (247/4, lift 2.9)
+	headache > -0.3457099
+	sleep_quality <= -1.090023
+	safety <= -0.5259072
+	->  class 2  [0.980]
+
+Rule 18: (47/1, lift 2.9)
+	breathing_problem > 0.9036297
+	safety > -1.232996
+	social_support > -1.793429
+	->  class 2  [0.959]
+
+Rule 19: (124/6, lift 2.8)
+	breathing_problem <= 0.9036297
+	noise_level > -1.249394
+	noise_level <= 1.035262
+	future_career_concerns > -1.06393
+	extracurricular_activities > 0.1779048
+	->  class 2  [0.944]
+
+Rule 20: (109/6, lift 2.8)
+	noise_level > -1.249394
+	noise_level <= 1.035262
+	safety > -1.232996
+	extracurricular_activities > 0.1779048
+	->  class 2  [0.937]
+
+Rule 21: (89/7, lift 2.7)
+	headache > 1.065939
+	safety <= 0.1811814
+	future_career_concerns > -1.06393
+	->  class 2  [0.912]
+
+Rule 22: (8, lift 2.7)
+	headache > -1.757359
+	sleep_quality > -1.090023
+	noise_level > -2.010946
+	basic_needs <= -0.5560718
+	future_career_concerns <= -1.06393
+	->  class 2  [0.900]
+
+Rule 23: (6, lift 2.6)
+	headache > -1.757359
+	blood_pressure > -0.2099867
+	sleep_quality > 0.2056647
+	noise_level > -2.010946
+	future_career_concerns > -1.721985
+	future_career_concerns <= -1.06393
+	->  class 2  [0.875]
+
+Rule 24: (6, lift 2.6)
+	headache > -0.3457099
+	sleep_quality <= -1.090023
+	safety > -0.5259072
+	teacher_student_relationship > -0.4677199
+	->  class 2  [0.875]
+
+Rule 25: (4, lift 2.5)
+	headache > -1.757359
+	blood_pressure > -0.2099867
+	sleep_quality > 0.8535084
+	noise_level > -2.010946
+	future_career_concerns <= -1.06393
+	->  class 2  [0.833]
+
+Default class: 0
+
+
+Evaluation on training data (882 cases):
+
+	        Rules     
+	  ----------------
+	    No      Errors
+
+	    25   36( 4.1%)   <<
+
+
+	   (a)   (b)   (c)    <-classified as
+	  ----  ----  ----
+	   284    11     4    (a): class 0
+	     5   281     1    (b): class 1
+	    10     5   281    (c): class 2
+
+
+	Attribute usage:
+
+	100.00%	blood_pressure
+	 77.21%	headache
+	 62.59%	sleep_quality
+	 62.59%	social_support
+	 38.21%	future_career_concerns
+	 36.39%	noise_level
+	 35.03%	safety
+	 33.11%	breathing_problem
+	 32.20%	extracurricular_activities
+	 29.37%	academic_performance
+	 13.95%	anxiety_level
+	  7.48%	teacher_student_relationship
+	  0.91%	basic_needs
+
+
+Time: 0.0 secs
+
